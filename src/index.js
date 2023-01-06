@@ -19,7 +19,7 @@ app.use(express.json());
 
 //WhiteList 
 //Darle acceso a diferenctes dominios que incluya el arreglo
-const whiteList = ["http://localhost:3001","http://localhost:3000"];
+/* const whiteList = ["http://localhost:3001","http://localhost:3000"];
 const options = {
     origin: (origin, callback) => {
         if(whiteList.includes(origin)){
@@ -28,7 +28,7 @@ const options = {
             callback(new Error("No permitido D:"));
         }
     }
-}
+} */
 
 //Para darle acceso a todos los dominios
 //app.use(cors())
@@ -45,7 +45,7 @@ app.get('/nueva-ruta', (req, res) => {
 }); */
 
 routerApi(app);
-app.use(cors(options));
+app.use(cors());
 
 //Use middlewares
 app.use(logErrors);
